@@ -1,0 +1,39 @@
+Códigos coloridos
+osc(30, 0.05, 1.8)
+  .kaleid().mult(osc(30, 0.001, 0)
+                 .rotate(3)).blend(o0, 0.94)
+ .modulateScale(osc(20, 6),0.03)
+  .scale(0.9, () => (1.05 + 0.1 * Math.sin(3*time)))
+  .out(o0)
+
+Código mezcla morado I...V
+shape(3,0,0.3)
+.color(3,0.9,10)
+  .scale(() => Math.sin(time)+2*2)
+  //.repeat(() => Math.sin(time)*10)
+  //.modulateRotate(o0)
+  //.scale(() => Math.sin(time)+1 *1.5)
+  //.modulate(noise(2,2))
+  //.rotate(3, .5)
+.out(o0)
+
+Código blanco y negro pixelaedo
+voronoi(350,0.015)
+  	.modulateScale(osc(5).rotate(Math.sin(time)),.5)
+  	.thresh(.8)
+	.modulateRotate(osc(9),1)
+	.thresh(.7)
+  	.diff(src(o0).scale(1.8))
+	.modulateScale(osc(4).modulateRotate(o0,.74))
+	.diff(src(o0).rotate([-.012,.01,-.002,0]).scrollY(0,[-1/199800,0].fast(0.7)))
+	.brightness([-.02,-.17].smooth().fast(.5))
+	.out()
+
+Mariposa
+osc(40,0.2,1)
+  .modulateScale(osc(40,0,1).kaleid(8))
+  .repeat(2,4)
+  .modulate(o0,0.05)
+  .modulateKaleid(shape(4,0.1,1))
+  .out(o0)
+
