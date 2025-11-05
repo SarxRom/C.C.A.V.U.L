@@ -1,0 +1,57 @@
+//hush()
+
+osc(150)
+  .sub(shape(3).color(1,0,0.3))
+  .rotate(2,1)
+  .color(2,0,1)
+  .modulateRepeatY(shape(3).scale(2,3,1))
+  .out()
+
+shape(3)
+  .color(2,0,1)
+  .sub(osc(30).color(2,0.2,3))
+  .modulateRepeatX(osc(15).rotate(2))
+  .rotate(1)
+  .out()
+
+s0.initImage()
+
+//Fusion
+
+//add
+//sub
+//mult
+//blend
+//diff
+//mask
+//layer requiere de canal alfa (mascara)
+
+shape(5)
+  .add(osc(200).color(2,0,1))
+  .out()
+
+shape(6)
+  .sub(osc(200).color(2,0,0.3))
+  .rotate(2,1)
+  .out()
+
+shape(9)
+  .mult(osc(200).color(2,0,1))
+  .rotate(1,2)
+  .out()
+
+shape(5)
+  .blend(osc(200))
+  .out()
+
+shape(5)
+  .diff(osc(200))
+  .out()
+
+shape(5)
+  .mask(osc(200).color(2,0,1))
+  .out()
+
+shape(5)
+  .layer(osc(200).color(2,0,1,0.3))
+  .out()
