@@ -1,0 +1,13 @@
+$: note("<b7 e b a c a - f e7 a!2*2>")
+  .sound("saw")
+  .gain(0.5)
+  .fast(8).lpf(slider(0.286).range(200,4000))
+  .gain(slider(1).range(0,1))
+  .jux(rev())
+  .color("red")
+  ._pianoroll()
+  .scope()
+
+// c d e f g a b   (g e4 f a!2*2 b a)
+
+//hush()
